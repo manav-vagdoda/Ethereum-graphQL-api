@@ -18,7 +18,7 @@ export function handleTransfer(event: TransferEvent): void {
 
     let tokenContract = TokenContract.bind(event.address);
     token.contentURI = tokenContract.tokenURI(event.params.tokenId);
-    token.tokenIPFSPath = tokenContract.getTokenIPFSPath(events.params.tokenId);
+    token.tokenIPFSPath = tokenContract.getTokenIPFSPath(event.params.tokenId);
     token.name = tokenContract.name();
     token.createdAtTimestamp = event.block.timestamp;
   }
